@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masuk / Daftar - Sora_Store.ID</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Font Awesome untuk Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans flex flex-col min-h-screen">
+
+    <!-- 1. HERO HEADER (Sesuai gaya Sora_Store.ID) -->
+    <header class="w-full bg-gray-900 text-white py-12 px-4 text-center relative overflow-hidden bg-cover bg-center" 
+            style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1000');">
+        <h1 class="text-3xl md:text-5xl font-extrabold tracking-wide text-white mb-2">Sora_Store.ID</h1>
+        <p class="text-orange-400 text-sm md:text-lg font-medium tracking-wider">Tempat TopUp Aman & Terpercaya</p>
+    </header>
+
+    <!-- 2. NAVIGATION MENU (Warna Oranye sesuai Gambar) -->
+    <nav class="bg-amber-500 shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col items-center py-3">
+                <span class="text-xs uppercase font-bold tracking-widest text-amber-950 mb-1">Menu</span>
+                <div class="flex justify-center space-x-6 md:space-x-12 text-sm md:text-base font-semibold text-amber-950">
+                    <a href="beranda.html" class="hover:text-white transition">Beranda</a>
+                    <a href="price_list.html" class="hover:text-white transition">Pricelist</a>
+                    <a href="berita.html" class="hover:text-white transition">Berita</a>
+                    <a href="lacak_pesanan.html" class="hover:text-white transition">Lacak Pesanan</a>
+                    <a href="login.html" class="text-white border-b-2 border-white pb-0.5">Login</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 3. MAIN CONTENT (LOGIN / SIGN IN CONTAINER) -->
+    <main class="flex-grow flex items-center justify-center px-4 py-12">
+        <div class="bg-white rounded-2xl shadow-lg border border-gray-200 w-full max-w-md overflow-hidden">
+            
+            <!-- Toggle Pilihan Tab -->
+            <div class="flex border-b border-gray-200 text-center font-bold text-sm">
+                <button id="tabLogin" class="w-1/2 py-4 text-sky-600 border-b-2 border-sky-600 transition focus:outline-none">
+                    <i class="fa-solid fa-right-to-bracket mr-2"></i>Masuk (Login)
+                </button>
+                <button id="tabRegister" class="w-1/2 py-4 text-gray-400 hover:text-gray-600 transition focus:outline-none">
+                    <i class="fa-solid fa-user-plus mr-2"></i>Daftar (Sign Up)
+                </button>
+            </div>
+
+            <!-- FORM BOXES CONTAINER -->
+            <div class="p-6 md:p-8">
+
+                <!-- A. FORM LOGIN (MASUK) -->
+                <form id="formLogin" class="space-y-5">
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">WhatsApp / Email</label>
+                        <div class="relative">
+                            <input type="text" required placeholder="Masukkan Email atau No. WA" 
+                                   class="w-full bg-gray-50 border border-gray-300 rounded-xl px-4 py-3 pl-11 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition">
+                            <i class="fa-solid fa-user absolute left-4 top-3.5 text-gray-400 text-sm"></i>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider">Kata Sandi</label>
+                            <a href="#" class="text-xs text-sky-600 hover:underline">Lupa Sandi?</a>
+                        </div>
+                        <div class="relative">
+                            <input type="password" required placeholder="Masukkan Kata Sandi" 
+                                   class="w-full bg-gray-50 border border-gray-300 rounded-xl px-4 py-3 pl-11 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition">
+                            <i class="fa-solid fa-lock absolute left-4 top-3.5 text-gray-400 text-sm"></i>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center">
+                        <input type="checkbox" id="rememberMe" class="w-4 h-4 text-sky-600 border-gray-300 rounded focus:ring-sky-500">
+                        <label for="rememberMe" class="ml-2 text-xs text-gray-600 select-none">Ingat Akun Saya</label>
+                    </div>
+
+                    <button type="submit" class="w-full bg-sky-600 hover:bg-sky-700 text-white font-bold py-3 px-4 rounded-xl text-sm transition shadow-md shadow-sky-600/10">
+                        Masuk Sekarang
+                    </button>
+                </form>
+
+                <!-- B. FORM REGISTER (DAFTAR / SIGN UP) - Hidden Default -->
+                <form id="formRegister" class="space-y-5 hidden">
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">Nama Lengkap</label>
+                        <div class="relative">
+                            <input type="text" placeholder="Contoh: Andi Wijaya" 
+                                   class="w-full bg-gray-50 border border-gray-300 rounded-xl px-4 py-3 pl-11 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition">
+                            <i class="fa-solid fa-id-card absolute left-4 top-3.5 text-gray-400 text-sm"></i>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">Nomor WhatsApp</label>
+                        <div class="relative">
+                            <input type="tel" placeholder="Contoh: 08123456789" 
+                                   class="w-full bg-gray-50 border border-gray-300 rounded-xl px-4 py-3 pl-11 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition">
+                            <i class="fa-brands fa-whatsapp absolute left-4 top-3.5 text-gray-400 text-base"></i>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">Kata Sandi Baru</label>
+                        <div class="relative">
+                            <input type="password" placeholder="Minimal 6 karakter" 
+                                   class="w-full bg-gray-50 border border-gray-300 rounded-xl px-4 py-3 pl-11 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition">
+                            <i class="fa-solid fa-lock absolute left-4 top-3.5 text-gray-400 text-sm"></i>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="w-full bg-amber-500 hover:bg-amber-600 text-amber-950 font-extrabold py-3 px-4 rounded-xl text-sm transition shadow-md shadow-amber-500/10">
+                        Buat Akun Baru
+                    </button>
+                </form>
+
+                <!-- Informasi Tambahan (Mirip Kotak Info di gambar) -->
+                <div class="mt-6 bg-amber-50 border border-amber-200 rounded-xl p-4 text-center">
+                    <p class="text-xs text-amber-900 leading-relaxed">
+                        <i class="fa-solid fa-gift text-amber-600 mr-1.5"></i> 
+                        Login untuk mendapatkan <strong>voucher potongan harga</strong> & penawaran eksklusif lainnya!
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- 4. FOOTER -->
+    <footer class="bg-gray-900 text-gray-400 text-xs py-6 text-center border-t border-gray-800">
+        <p>&copy; 2026 Sora_Store.ID . All rights reserved.</p>
+    </footer>
+
+    <!-- INTERAKTIF TAB SWITCHER JAVASCRIPT -->
+    <script>
+        const tabLogin = document.getElementById('tabLogin');
+        const tabRegister = document.getElementById('tabRegister');
+        const formLogin = document.getElementById('formLogin');
+        const formRegister = document.getElementById('formRegister');
+
+        // Event saat tombol Tab Login di-klik
+        tabLogin.addEventListener('click', () => {
+            // Ubah gaya tab aktif
+            tabLogin.className = "w-1/2 py-4 text-sky-600 border-b-2 border-sky-600 font-bold transition focus:outline-none";
+            tabRegister.className = "w-1/2 py-4 text-gray-400 hover:text-gray-600 font-bold transition focus:outline-none";
+            // Atur visibilitas form
+            formLogin.classList.remove('hidden');
+            formRegister.classList.add('hidden');
+        });
+
+        // Event saat tombol Tab Daftar (Sign Up) di-klik
+        tabRegister.addEventListener('click', () => {
+            // Ubah gaya tab aktif
+            tabRegister.className = "w-1/2 py-4 text-sky-600 border-b-2 border-sky-600 font-bold transition focus:outline-none";
+            tabLogin.className = "w-1/2 py-4 text-gray-400 hover:text-gray-600 font-bold transition focus:outline-none";
+            // Atur visibilitas form
+            formRegister.classList.remove('hidden');
+            formLogin.classList.add('hidden');
+        });
+    </script>
+</body>
+</html>

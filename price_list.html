@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricelist - Sora_Store.ID</title>
+    <!-- Tailwind CSS via CDN untuk mempermudah styling modern -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Font Awesome untuk Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+    <!-- 1. HERO HEADER (Meniru tema gelap Sora_Store.ID) -->
+    <header class="w-full bg-gray-900 text-white py-12 px-4 text-center relative overflow-hidden bg-cover bg-center" 
+            style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1000');">
+        <h1 class="text-3xl md:text-5xl font-extrabold tracking-wide text-white mb-2">Sora_Store.ID</h1>
+        <p class="text-orange-400 text-sm md:text-lg font-medium tracking-wider">Tempat TopUp Aman & Terpercaya</p>
+    </header>
+
+    <!-- 2. NAVIGATION MENU (Warna Oranye sesuai Gambar) -->
+    <nav class="bg-amber-500 shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col items-center py-3">
+                <span class="text-xs uppercase font-bold tracking-widest text-amber-950 mb-1">Menu</span>
+                <div class="flex justify-center space-x-6 md:space-x-12 text-sm md:text-base font-semibold text-amber-950">
+                    <a href="beranda.html" class="hover:text-white transition">Beranda</a>
+                    <a href="price_list.html" class="text-white border-b-2 border-white pb-0.5">Pricelist</a>
+                    <a href="berita.html" class="hover:text-white transition">Berita</a>
+                    <a href="lacak_pesanan.html" class="hover:text-white transition">Lacak Pesanan</a>
+                    <a href="login.html" class="hover:text-white transition">Login</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 3. MAIN CONTENT (PRICELIST) -->
+    <main class="container mx-auto px-4 py-8 max-w-5xl">
+        
+        <!-- Judul Halaman & Fitur Cari -->
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-8 gap-4">
+            <div>
+                <h2 class="text-2xl md:text-3xl font-bold text-sky-600"><i class="fa-solid fa-tags mr-2"></i>Daftar Harga Resmi</h2>
+                <p class="text-xs text-gray-500 mt-1">Harga currency game terupdate dan termurah di Sora_Store.ID</p>
+            </div>
+            <!-- Kotak Pencarian -->
+            <div class="relative w-full md:w-72">
+                <input type="text" id="searchGame" placeholder="Cari game favoritmu..." 
+                       class="w-full bg-white border border-gray-300 rounded-lg px-4 py-2 pl-10 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 shadow-sm">
+                <i class="fa-solid fa-magnifying-glass absolute left-3 top-3 text-gray-400 text-sm"></i>
+            </div>
+        </div>
+
+        <!-- TABEL PRICELIST GAME -->
+        <div class="space-y-8">
+            
+            <!-- Kategori Game 1: Mobile Legends -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-200 game-section">
+                <!-- Header Game -->
+                <div class="bg-gradient-to-r from-sky-600 to-indigo-700 p-4 text-white flex items-center justify-between">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center font-bold">ML</div>
+                        <div>
+                            <h3 class="font-bold text-base md:text-lg">Mobile Legends: Bang Bang</h3>
+                            <p class="text-[11px] text-sky-100">Mata Uang: Diamonds (💎)</p>
+                        </div>
+                    </div>
+                    <span class="bg-amber-500 text-amber-950 font-bold text-xs px-2.5 py-1 rounded-full">Proses Otomatis</span>
+                </div>
+                <!-- Tabel Harga -->
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse text-sm">
+                        <thead>
+                            <tr class="bg-gray-100 text-gray-600 font-semibold border-b border-gray-200">
+                                <th class="p-4">Item / Nominal</th>
+                                <th class="p-4">Harga Normal</th>
+                                <th class="p-4 text-orange-600">Harga Member</th>
+                                <th class="p-4 text-center">Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-100">
+                            <tr class="hover:bg-gray-50 transition">
+                                <td class="p-4 font-medium flex items-center"><i class="fa-solid fa-gem text-sky-500 mr-2"></i> 86 Diamonds</td>
+                                <td class="p-4 text-gray-400 line-through text-xs">Rp 23.500</td>
+                                <td class="p-4 font-bold text-amber-600">Rp 21.900</td>
+                                <td class="p-4 text-center"><button class="bg-sky-600 hover:bg-sky-700 text-white text-xs px-3 py-1.5 rounded font-semibold transition shadow-sm">Top Up</button></td>
+                            </tr>
+                            <tr class="hover:bg-gray-50 transition">
+                                <td class="p-4 font-medium flex items-center"><i class="fa-solid fa-gem text-sky-500 mr-2"></i> 172 Diamonds</td>
+                                <td class="p-4 text-gray-400 line-through text-xs">Rp 46.000</td>
+                                <td class="p-4 font-bold text-amber-600">Rp 42.500</td>
+                                <td class="p-4 text-center"><button class="bg-sky-600 hover:bg-sky-700 text-white text-xs px-3 py-1.5 rounded font-semibold transition shadow-sm">Top Up</button></td>
+                            </tr>
+                            <tr class="hover:bg-gray-50 transition">
+                                <td class="p-4 font-medium flex items-center"><i class="fa-solid fa-calendar-star text-purple-500 mr-2"></i> Weekly Diamond Pass</td>
+                                <td class="p-4 text-gray-400 line-through text-xs">Rp 30.000</td>
+                                <td class="p-4 font-bold text-amber-600">Rp 27.200</td>
+                                <td class="p-4 text-center"><button class="bg-sky-600 hover:bg-sky-700 text-white text-xs px-3 py-1.5 rounded font-semibold transition shadow-sm">Top Up</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Kategori Game 2: Free Fire -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-200 game-section">
+                <!-- Header Game -->
+                <div class="bg-gradient-to-r from-orange-600 to-red-700 p-4 text-white flex items-center justify-between">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center font-bold">FF</div>
+                        <div>
+                            <h3 class="font-bold text-base md:text-lg">Free Fire</h3>
+                            <p class="text-[11px] text-orange-100">Mata Uang: Diamonds (💎)</p>
+                        </div>
+                    </div>
+                    <span class="bg-amber-500 text-amber-950 font-bold text-xs px-2.5 py-1 rounded-full">Proses Otomatis</span>
+                </div>
+                <!-- Tabel Harga -->
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse text-sm">
+                        <thead>
+                            <tr class="bg-gray-100 text-gray-600 font-semibold border-b border-gray-200">
+                                <th class="p-4">Item / Nominal</th>
+                                <th class="p-4">Harga Normal</th>
+                                <th class="p-4 text-orange-600">Harga Member</th>
+                                <th class="p-4 text-center">Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-100">
+                            <tr class="hover:bg-gray-50 transition">
+                                <td class="p-4 font-medium flex items-center"><i class="fa-solid fa-fire text-orange-500 mr-2"></i> 70 Diamonds</td>
+                                <td class="p-4 text-gray-400 line-through text-xs">Rp 11.000</td>
+                                <td class="p-4 font-bold text-amber-600">Rp 9.600</td>
+                                <td class="p-4 text-center"><button class="bg-orange-600 hover:bg-orange-700 text-white text-xs px-3 py-1.5 rounded font-semibold transition shadow-sm">Top Up</button></td>
+                            </tr>
+                            <tr class="hover:bg-gray-50 transition">
+                                <td class="p-4 font-medium flex items-center"><i class="fa-solid fa-fire text-orange-500 mr-2"></i> 140 Diamonds</td>
+                                <td class="p-4 text-gray-400 line-through text-xs">Rp 21.000</td>
+                                <td class="p-4 font-bold text-amber-600">Rp 18.900</td>
+                                <td class="p-4 text-center"><button class="bg-orange-600 hover:bg-orange-700 text-white text-xs px-3 py-1.5 rounded font-semibold transition shadow-sm">Top Up</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Kategori Game 3: PUBG Mobile -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-200 game-section">
+                <!-- Header Game -->
+                <div class="bg-gradient-to-r from-gray-700 to-gray-800 p-4 text-white flex items-center justify-between">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center font-bold">PUBG</div>
+                        <div>
+                            <h3 class="font-bold text-base md:text-lg">PUBG Mobile</h3>
+                            <p class="text-[11px] text-gray-300">Mata Uang: Unknown Cash (UC)</p>
+                        </div>
+                    </div>
+                    <span class="bg-amber-500 text-amber-950 font-bold text-xs px-2.5 py-1 rounded-full">Proses Otomatis</span>
+                </div>
+                <!-- Tabel Harga -->
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse text-sm">
+                        <thead>
+                            <tr class="bg-gray-100 text-gray-600 font-semibold border-b border-gray-200">
+                                <th class="p-4">Item / Nominal</th>
+                                <th class="p-4">Harga Normal</th>
+                                <th class="p-4 text-orange-600">Harga Member</th>
+                                <th class="p-4 text-center">Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-100">
+                            <tr class="hover:bg-gray-50 transition">
+                                <td class="p-4 font-medium flex items-center"><i class="fa-solid fa-coins text-yellow-500 mr-2"></i> 60 UC</td>
+                                <td class="p-4 text-gray-400 line-through text-xs">Rp 16.500</td>
+                                <td class="p-4 font-bold text-amber-600">Rp 14.300</td>
+                                <td class="p-4 text-center"><button class="bg-gray-800 hover:bg-gray-900 text-white text-xs px-3 py-1.5 rounded font-semibold transition shadow-sm">Top Up</button></td>
+                            </tr>
+                            <tr class="hover:bg-gray-50 transition">
+                                <td class="p-4 font-medium flex items-center"><i class="fa-solid fa-coins text-yellow-500 mr-2"></i> 325 UC</td>
+                                <td class="p-4 text-gray-400 line-through text-xs">Rp 75.000</td>
+                                <td class="p-4 font-bold text-amber-600">Rp 68.000</td>
+                                <td class="p-4 text-center"><button class="bg-gray-800 hover:bg-gray-900 text-white text-xs px-3 py-1.5 rounded font-semibold transition shadow-sm">Top Up</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- 4. FOOTER SIMPLE -->
+    <footer class="bg-gray-900 text-gray-400 text-xs py-6 mt-12 text-center border-t border-gray-800">
+        <p>&copy; 2026 Sora_Store.ID . All rights reserved.</p>
+    </footer>
+
+    <!-- SCRIPT SEDERHANA UNTUK REALTIME SEARCH GAME -->
+    <script>
+        const searchInput = document.getElementById('searchGame');
+        const gameSections = document.querySelectorAll('.game-section');
+
+        searchInput.addEventListener('input', function() {
+            const filter = searchInput.value.toLowerCase();
+            gameSections.forEach(section => {
+                const gameName = section.querySelector('h3').textContent.toLowerCase();
+                if (gameName.includes(filter)) {
+                    section.style.display = "block";
+                } else {
+                    section.style.display = "none";
+                }
+            });
+        });
+    </script>
+</body>
+</html>
